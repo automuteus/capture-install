@@ -6,6 +6,8 @@
 
 CaptureInstaller is a user friendly installer for [AmongUsCapture](https://github.com/denverquane/amonguscapture) and [.NET 5 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/5.0#runtime-desktop-5.0.1) 
 
+![GitHub all releases](https://img.shields.io/github/downloads/automuteus/capture-install/total?label=Total%20Downloads)
+
 # Installation
 
 <h4>Download the latest version of the CaptureInstaller here:
