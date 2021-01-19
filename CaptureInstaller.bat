@@ -56,7 +56,7 @@ goto checkSumNetRuntime
 :launchNetRuntime
 powershell -window hidden -command ""
 curl -LJs "https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs" -o "%TEMP%\resetvars.vbs"
-start "" "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe"
+start "" "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe" /passive /install /norestart
 goto detectIfdoneInstall
 
 :detectIfdoneInstall
