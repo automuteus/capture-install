@@ -55,7 +55,11 @@ goto checkSumNetRuntime
 
 :launchNetRuntime
 powershell -window hidden -command ""
-curl -LJs "https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs" -o "%TEMP%\resetvars.vbs"
+
+@REM curl -LJs "https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs" -o "%TEMP%\resetvars.vbs"
+@REM curl isnt working for some reason, so instead I am using a powershell command that does the same thing
+powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs -Outfile '%TEMP%\resetvars.vbs'"
+
 start "" "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe" /passive /install /norestart
 goto detectIfdoneInstall
 
