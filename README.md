@@ -1,5 +1,5 @@
 <a href="https://automute.us">
-<img alt="Banner" src="https://github.com/automuteus/capture-install/blob/main/banner.png">
+<img alt="Banner" src="./banner.png">
 </a>
 
 # 
@@ -10,7 +10,7 @@ CaptureInstaller is a user friendly installer for [AmongUsCapture](https://githu
 
 <h4>Download the latest version of the CaptureInstaller here:
 <a href="https://github.com/automuteus/capture-install/releases/latest/download/CaptureInstaller.bat" target="_blank">
-<img alt="GitHub release" src="https://img.shields.io/github/v/release/automuteus/capture-install?color=blue&label=download&style=flat-square">
+<img alt="GitHub release" src="https://img.shields.io/github/v/release/automuteus/capture-install?color=blue&label=Download&style=flat-square">
 </a></h4>
 
 ## Usage
