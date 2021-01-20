@@ -3,7 +3,7 @@ powershell -window hidden -command ""
 Mode 80,3 & color 0A
 
 Set NETdownloadLink=https://download.visualstudio.microsoft.com/download/pr/c6a74d6b-576c-4ab0-bf55-d46d45610730/f70d2252c9f452c2eb679b8041846466/windowsdesktop-runtime-5.0.1-win-x64.exe
-Set CAPTUREdownloadlink=https://github.com/denverquane/amonguscapture/releases/latest/download/AmongUsCapture.zip
+Set CAPTUREdownloadlink=https://github.com/automuteus/amonguscapture/releases/latest/download/AmongUsCapture.zip
 Set NET5HASH=a7f9fc194371e125de609c709b52b1ac
 Set zipName=AmongUsCapture.zip
 Set captureName=AmongUsCapture.exe
