@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Capture_Installer_WPF"
+        ResizeMode="CanResizeWithGrip"
         xmlns:dialogs="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         dialogs:DialogParticipation.Register="{Binding}"
         Title="Capture Installer" Height="322" Width="494">
+    <mah:MetroWindow.Resources>
+        <ResourceDictionary>
+        </ResourceDictionary>
+    </mah:MetroWindow.Resources>
     <Grid>
         
     </Grid>
