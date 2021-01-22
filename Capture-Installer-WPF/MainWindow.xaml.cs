@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace Capture_Installer_WPF
 {
@@ -22,11 +23,13 @@ namespace Capture_Installer_WPF
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private UserDataContext context;
         public MainWindow()
         {
             InitializeComponent();
             ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
             ThemeManager.Current.SyncTheme();
+            context = new UserDataContext(DialogCoordinator.Instance);
         }
     }
 }
