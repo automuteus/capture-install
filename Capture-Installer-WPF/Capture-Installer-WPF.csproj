@@ -139,6 +139,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Humanizer.Core">
+      <Version>2.8.26</Version>
+    </PackageReference>
     <PackageReference Include="MahApps.Metro">
       <Version>2.4.3</Version>
     </PackageReference>
