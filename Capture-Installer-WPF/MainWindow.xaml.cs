@@ -26,10 +26,22 @@ namespace Capture_Installer_WPF
         private UserDataContext context;
         public MainWindow()
         {
+            context = new UserDataContext(DialogCoordinator.Instance);
+            this.DataContext = context;
             InitializeComponent();
             ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
             ThemeManager.Current.SyncTheme();
-            context = new UserDataContext(DialogCoordinator.Instance);
+
+        }
+
+        private async void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var result = await this.ShowMessageAsync("INFO", "You are installing Among Us Capture, and dotnet 5. Do you want to continue?", MessageDialogStyle.AffirmativeAndNegative);
+            if (result == MessageDialogResult.Negative)
+            {
+                App.Current.Shutdown(24);
+            }
+            //User agreed to continue installation
         }
     }
 }

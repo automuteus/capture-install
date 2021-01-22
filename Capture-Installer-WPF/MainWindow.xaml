@@ -9,7 +9,7 @@
         xmlns:dialogs="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         dialogs:DialogParticipation.Register="{Binding}"
-        Title="Capture Installer" Height="322" Width="494">
+        Title="Capture Installer" Height="322" Width="494" Loaded="MainWindow_OnLoaded">
     <mah:MetroWindow.Resources>
         <ResourceDictionary>
         </ResourceDictionary>
