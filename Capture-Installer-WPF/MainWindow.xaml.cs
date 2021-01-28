@@ -146,7 +146,7 @@ namespace Capture_Installer_WPF
                         InstallCapture(extractPath);
                     }
                 };
-                var downloaderClient = client.DownloadFileTaskAsync(DownloadURL, downloadPath);
+                await client.DownloadFileTaskAsync(DownloadURL, downloadPath);
             }
         }
 
@@ -203,16 +203,16 @@ namespace Capture_Installer_WPF
                 lines = System.IO.File.ReadAllLines(System.IO.Path.Combine(System.IO.Path.GetTempPath(), "desktopRuntimes.txt"));
                 if (!lines.Any(x => x.StartsWith("Microsoft.WindowsDesktop.App 5", StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    return true; //Need to install dotnet
+                    return false; //Need to install dotnet
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }
             catch (Exception e)
             {
-                return true;
+                return false;
             }
         }
 
@@ -233,10 +233,18 @@ namespace Capture_Installer_WPF
             step.Next();
             StartButton.IsEnabled = false;
             ExitButton.IsEnabled = false;
-            InstallDotnet(extractPath);
-            
 
-            
+            if (!IsDotnetInstalled())
+            {
+                InstallDotnet(extractPath);
+            }
+            else
+            {
+                step.Next();
+                step.Next();
+                step.Next();
+                InstallCapture(extractPath);
+            }
         }
     }
 }
