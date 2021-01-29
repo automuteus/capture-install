@@ -12,8 +12,13 @@ CaptureInstaller is a user friendly installer for [AmongUsCapture](https://githu
 
 <h4>Download the latest version of the CaptureInstaller here:
 <a href="https://github.com/automuteus/capture-install/releases/latest/download/CaptureInstaller.bat" target="_blank">
-<img alt="GitHub release" src="https://img.shields.io/github/v/release/automuteus/capture-install?color=blue&label=Download&style=flat-square">
+<img alt="GitHub release" src="https://img.shields.io/github/v/release/automuteus/capture-install?color=blue&label=Download&style=square">
 </a></h4>
+
+If you don't have the AutoMuteUs discord bot, invite it here:
+ <a href="add.automute.us" alt="invite">
+        <img alt="Invite Link" src="https://img.shields.io/static/v1?label=bot&message=invite%20me&color=purple">
+ </a>
 
 ## Usage
 
