@@ -17,7 +17,7 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 REM -----------
 
 cmd /c "dotnet --list-runtimes" > "%TEMP%\desktopRuntimes.txt"
-find "Microsoft.WindowsDesktop.App 5.0.9" %TEMP%\desktopRuntimes.txt && (
+find "Microsoft.NETCore.App 5.0.9" %TEMP%\desktopRuntimes.txt && (
   del "%TEMP%\desktopRuntimes.txt"
   REM .Net Runtime Already installed
   goto checkForCapture
