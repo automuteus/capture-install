@@ -16,7 +16,7 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 REM -----------
 
 cmd /c "dotnet --list-runtimes" > "%TEMP%\desktopRuntimes.txt"
-find "Microsoft.WindowsDesktop.App 5.0.1" %TEMP%\desktopRuntimes.txt && (
+find "Microsoft.WindowsDesktop.App 5.0" %TEMP%\desktopRuntimes.txt && (
   del "%TEMP%\desktopRuntimes.txt"
   REM .Net Runtime Already installed
   goto checkForCapture
@@ -43,23 +43,18 @@ REM ――――――――――――――――――
 
 :installNetRuntime
 cls
-echo off
-cls
 @powershell -window normal -command ""
 call :colorEcho 0A "        ---Downloading .NET 5 Desktop Runtime Installer (dependency)---"
 echo.
 echo.
-curl -# "%NETdownloadLink%" -o "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe"
+curl -k# "%NETdownloadLink%" -o "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe"
 @powershell -window hidden -command ""
 goto checkSumNetRuntime
 
 :launchNetRuntime
 powershell -window hidden -command ""
 
-@REM curl -LJs "https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs" -o "%TEMP%\resetvars.vbs"
-@REM curl isnt working for some reason, so instead I am using a powershell command that does the same thing
-powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs -Outfile '%TEMP%\resetvars.vbs'"
-
+curl -kLs "https://raw.githubusercontent.com/automuteus/capture-install/main/resetvars.vbs" -o "%TEMP%\resetvars.vbs"
 start "" "%TEMP%\windowsdesktop-runtime-5.0.1-win-x64.exe" /passive /install /norestart
 goto detectIfdoneInstall
 
@@ -98,7 +93,7 @@ cls
 call :colorEcho 0A "                      ---Downloading AutoMuteUs Capture---"
 echo.
 echo.
-curl -LJ# "%CAPTUREdownloadLink%" -o "%~dp0%zipName%"
+curl -kLJ# "%CAPTUREdownloadLink%" -o "%~dp0%zipName%"
 goto :unZip
 
 :unZip
